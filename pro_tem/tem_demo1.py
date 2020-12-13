@@ -1,27 +1,5 @@
 from flask import Flask, render_template
-from flask import url_for
 app = Flask(__name__)
-
-
-@app.route('/')
-def hello():
-    return '<h1>welcome to my watchlist!!</h1>'
-
-
-@app.route('/user/<name>')
-def user_page(name):
-    return 'User page %s' % name
-
-
-@app.route('/test')
-def test_url_for():
-    print(url_for('hello'))
-    print(url_for('user_page', name='tom'))
-    print(url_for('user_page', name='sam'))
-    print(url_for('test_url_for'))
-    print(url_for('test_url_for', name=3))
-
-
 
 
 @app.route('/index')
@@ -39,7 +17,9 @@ def test_template_test():
         {'title': 'WALL-E', 'year': '2008'},
         {'title': 'The Pork of Music', 'year': '2012'},
     ]
+    # templates文件夹与py文件在同一个目录下
     return render_template('index.html', name=name, movies=movies)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

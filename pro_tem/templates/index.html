@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}'s wathList!</title>
+</head>
+<body>
+    <h2>{{ name }}'s WathList</h2>
+    <p>{{ movies|length }}Titles</p>
+    <ul>
+        {% for movie in movies %}  {# 迭代movie #}
+        <li>{{ movie.title }} - {{ movie['year'] }}</li>
+        {% endfor %}   {# 使用endfor结束for语句 #}
+    </ul>
+    <footer>&copy; 2018 <a href="http://helloflask.com/tutorial"> Hello Flask 222</a>
+        <small></small>
+    </footer>
+</body>
+</html>
